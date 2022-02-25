@@ -1,9 +1,13 @@
+.hidden {
+  display: none;
+}
+
 :root {
-  --primary: black;
+  --primary: #ccdad1;
   --secondary: #9caea9;
   --tertiary: #788585;
-  --light-dark: #6f6866;
-  --dark: #38302e;
+  --light-dark: rgb(47, 88, 183);
+  --dark: rgb(25, 2, 70);
   --border-radius: .3rem;
 }
 
@@ -12,11 +16,11 @@
 }
 
 body {
-  background-color: white;
+  /* background-color: var(--primary); */
   margin: 0;
   padding: 0;
   font-family: "IBM Plex Sans", sans-serif;
-  color: var(--dark);
+  /* color: var(--dark); */
   line-height: 1.5;
   font-size: 16px;
 }
@@ -29,44 +33,54 @@ h5,
 h6 {
   font-weight: 700;
   margin: 0;
-  color: var(--dark);
+  /* color: var(--dark); */
   line-height: 1.25;
 }
 
 main {
   margin: 20px auto;
-  width: 94%;
+  width: 90%;
 }
 
 p {
   font-size: 1.2rem;
 }
 
+
+
+.hero {
+  padding: 3% 4%;
+  background-color: var(--dark);
+  color: var(--primary);
+}
+
+
+
  .btn {
   font-size: 1.3rem;
   text-decoration:none;
   padding: 6px 5px;
   width: 100%;
-  display: block;
+  display: inline-block;
   margin: 5px 0;
   border-radius: var(--border-radius);
   color: var(--primary);
   border: none;
   outline: none;
-  background-color;
+  background-color: var(--light-dark);
   box-shadow: 3px 3px var(--dark);
   transform: translate(-1px, -1px);
 }
 
  .btn:hover {
-  color:var(--primary);
-  background-color: lightblue;
+  color: var(--primary);
+  background-color: var(--tertiary);
   transform: translate(0, 0);
   box-shadow: 2px 2px var(--dark);
 }
 
 .btn-inline {
-  display: inline;
+  display: inline-block;
 }
 
 .btn-back {
@@ -74,7 +88,7 @@ p {
   color: var(--primary);
   border: none;
   outline: none;
-  background-color: grey;
+  background-color: var(--light-dark);
   box-shadow: 3px 3px var(--secondary);
   transform: translate(-1px, -1px);
   display: inline-block;
@@ -87,24 +101,24 @@ p {
 
  .btn-back:hover {
   color: var(--primary);
-  background-color: lightblue;
+  background-color: var(--tertiary);
   transform: translate(0, 0);
   box-shadow: 2px 2px var(--dark);
 }
 
-.hero {
-  padding: 3% 4%;
-  background-color: blue;
-  color: white;
-  text-align: center;
+
+
+
+
+.app-title {
+  font-size: 3rem;
+  /* background-color: var(--primary);
+  color: var(--dark);
+  padding: 0 10px; */
+  display: inline-block;
+  border-radius: var(--border-radius);
+  /* box-shadow: 6px 5px var(--light-dark); */
 }
-
-.hero p {
-  max-width: 75%;
-  
-}
-
-
 
 .list-group {
   padding: 0;
@@ -124,32 +138,20 @@ p {
   background-color: var(--dark);
 }
 
-.status-icon {
-  padding: 2px 5px;
-  margin: 0 5px;
-  background-color: rgba(255,255,255, 1);
-  border-radius: var(--border-radius);
-}
 
-.icon-danger {
-  color: rgb(255, 70, 70);
-}
-
-.icon-success {
-  color: rgb(29, 153, 255);
-}
 
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: none;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
 }
 
 .card-header {
   color: var(--primary);
-  background-color: none;
+  background-color: var(--dark);
   padding: 2.5%;
-  border: none;
+  border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
 }
 
 .card-body {
@@ -160,7 +162,7 @@ p {
 .form-label,
 .form-input,
 .form-textarea {
-  display: block;
+  display: inline-block;
 }
 
 .form-label {
@@ -178,22 +180,22 @@ p {
 }
 
 /* HEIGHT / WIDTH UTILS */
-.min-100-vh {
+/* .min-100-vh {
   min-height: 100vh;
 }
 
 .min-100-vw {
   min-width: 100vw;
-}
+} */
 
 /* FONT UTILS */
-.text-uppercase {
+/* .text-uppercase {
   text-transform: uppercase;
-}
+} */
 
 
 /* FLEX CONTENT */
-.flex-row {
+/* .flex-row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -202,14 +204,14 @@ p {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}
+} */
 
-.justify-space-between {
-  justify-content: space-between;
-}
-
+/* .justify-space-between {
+  justify-content: left;
+} */
+/* 
 .justify-space-around {
-  justify-content: space-around;
+  justify-content: left;
 }
 
 .justify-flex-start {
@@ -234,7 +236,7 @@ p {
 
 .align-center {
   align-items: center;
-}
+} */
 
 .col-auto {
   flex-grow: 1;
@@ -494,6 +496,3 @@ p {
 }
 
 
-.hidden {
-  display: none;
-}
