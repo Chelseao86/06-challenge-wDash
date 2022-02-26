@@ -36,7 +36,7 @@ function GetWeatherData(value) {
         .then(res => res.json())
         .then(fiveDay => {
             var filteredArr = fiveDay.list.filter(query => query.dt_txt.includes("12:00:00"))
-           // console.log(filteredArr);
+       
             printForcastCards(filteredArr);
             
     })
@@ -62,7 +62,7 @@ function submit (e) {
     document.querySelector('#five-day-forcast').setAttribute("class", "row")
     var value = document.querySelector(".form-control").value
     cityHistoryArr.push(value)
-    if(cityHistoryArr.length>8){
+    if(cityHistoryArr.length>5){
         cityHistoryArr.splice(0,1)
     }
     localStorage.setItem("history", JSON.stringify(cityHistoryArr))
@@ -73,11 +73,6 @@ function submit (e) {
 function printForcastCards(fiveDay){
     console.log(fiveDay);
     console.log(fiveDay[0].dt_txt.split(" ")[0])
-//     var dateOne = moment().format("(M/D/YYYY)");
-//     $("#forecast-date1").text(new Date().toLocaleDateString())
-//     var dayOneIcon = "http://openweathermap.org/img/w/" + fiveDay.weather[0].icon + ".png"
-//    $("#forecast-icon1").attr("src", dayOneIcon)
-// console.log(fiveDay.weather[0].icon)
     var forecastTemp = $("#forecast-temp1");
     forecastTemp.text(`Temp: ${fiveDay[0].main.temp}°F`);
     var forecastHumidity = $("#forecast-humidity1");
